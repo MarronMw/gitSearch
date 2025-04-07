@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 void main() {
   runApp(const MyApp());
@@ -71,14 +70,16 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Color.fromARGB(0, 166, 174, 248),
         title: Text(widget.title),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
+      body: Center(       // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: Column(
       
-          mainAxisAlignment: MainAxisAlignment.center,
+          // mainAxisAlignment: MainAxisAlignment.center,
           
           children: <Widget>[
+            Padding(
+               padding: EdgeInsets.symmetric(horizontal: 10.0),
+              child: 
             TextField(
               maxLines: 1,
               decoration: InputDecoration(
@@ -86,6 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 labelText: "Whom are you planning to hire?",
               ),
+            ),
             ),
           ],
         ),

@@ -99,19 +99,19 @@ class _MyHomePageState extends State<MyHomePage> {
                   ]
                 ),
             ),
-            TextButton(onPressed: (){
-              showDialog(context: context, builder: (context){
-          return AlertDialog(content: Text(searchedUserController.text));
-        });
-            }, child: Text("search"))
+        //     TextButton(onPressed: (){
+        //       showDialog(context: context, builder: (context){
+        //   // return AlertDialog(content: Text(searchedUserController.text));
+        // });
+        //     }, child: Text("search"))
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(onPressed: (){
-        showDialog(context: context, builder: (context){
-          return AlertDialog(content: Text(searchedUserController.text));
-        });
-      }),
+      // floatingActionButton: FloatingActionButton(onPressed: (){
+      //   showDialog(context: context, builder: (context){
+      //     // return AlertDialog(content: Text(searchedUserController.text));
+      //   });
+      // }),
      );
   }
 }

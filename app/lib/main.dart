@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 void main() {
   runApp(const MyApp());
@@ -56,15 +57,23 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
+  final searchedUserController=TextEditingController();
+
+
+
+  
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    searchedUserController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
+   
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color.fromARGB(0, 166, 174, 248),
@@ -73,25 +82,37 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(       // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
       
-          // mainAxisAlignment: MainAxisAlignment.center,
           
           children: <Widget>[
             Padding(
                padding: EdgeInsets.symmetric(horizontal: 10.0),
               child: 
             TextField(
+              controller:searchedUserController,
               maxLines: 1,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
                 ),
                 labelText: "Whom are you planning to hire?",
               ),
+                         ),
             ),
-            ),
+            TextButton(onPressed: (){
+              showDialog(context: context, builder: (context){
+          return AlertDialog(content: Text(searchedUserController.text));
+        });
+            }, child: Text("search"))
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(onPressed: (){
+        showDialog(context: context, builder: (context){
+          return AlertDialog(content: Text(searchedUserController.text));
+        });
+      }),
      );
   }
 }

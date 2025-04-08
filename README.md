@@ -1,16 +1,16 @@
-# expenseTracker with budgetting
-A simple expenditure and income app by group 7
+# Github search Extension
+A simple search app for employers to search for employees
 
 ## Overview
-The **Expense Tracker with Budgeting** helps users manage their finances by tracking expenses, setting budgets, and analyzing spending trends with visual reports.
+The **GitHub search extension** will be an app that will allow employers to search for potential employees by their usernames or search for pontential employees by skills
 
 ## How It Works
-1. **Add Expenses**: Log daily expenses with categories.
-2. **Set Budgets**: Define spending limits per category.
-3. **Analyze Spending**
+1. **Enter Search Query** Either name or skill(Mainly wanted programming language)
+2. **Listing** This is the result List that Will show the list of results 
+3. 
 
 ## License
 This project is licensed under the MIT License.
 
 ## Contact
-For inquiries, reach out via [email@example.com](mailto:email@example.com) or open an issue on GitHub.
+For inquiries, reach out via timwongani2@gmail.com or open an issue on GitHub.

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+
+//APICLIENTS
+import 'users_api.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,13 +28,23 @@ class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
 
   final String title;
-
+ 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
   final TextEditingController _searchController = TextEditingController();
+
+   final usersApi=UsersApi();
+
+  //API CALLS AND HANDLES
+  void handle_search_user()async{
+    String username=_searchController.text;
+    final user =await usersApi.getUserByUsername(username);
+    print('TYPE:${user.runtimeType}');
+  }
+
 
 
   @override
@@ -83,13 +95,15 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       child: TextButton(
                           onPressed: (){
+                            handle_search_user();
                             final searchText = _searchController.text;
+
                             
                             // below is to show diolog box with searched text for testing purposes marron listen
                             showDialog(context: context, 
                                 builder: (context) => AlertDialog(
                                   title: Text("Search Result"),
-                                  content: Text("Youve searched for \"$searchText\""),
+                                  content: Text('Youve searched for $searchText'),
                                 )
                             );
                           },
@@ -99,19 +113,10 @@ class _MyHomePageState extends State<MyHomePage> {
                   ]
                 ),
             ),
-        //     TextButton(onPressed: (){
-        //       showDialog(context: context, builder: (context){
-        //   // return AlertDialog(content: Text(searchedUserController.text));
-        // });
-        //     }, child: Text("search"))
           ],
         ),
       ),
-      // floatingActionButton: FloatingActionButton(onPressed: (){
-      //   showDialog(context: context, builder: (context){
-      //     // return AlertDialog(content: Text(searchedUserController.text));
-      //   });
-      // }),
+      
      );
   }
 }

@@ -1,6 +1,6 @@
 # app
 
-A new Flutter project.
+A git search app.
 
 ## Getting Started
 
